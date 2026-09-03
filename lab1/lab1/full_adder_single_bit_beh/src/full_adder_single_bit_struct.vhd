@@ -17,8 +17,13 @@ entity full_adder_single_bit_struct is
 end entity;
 
 architecture beh of full_adder_single_bit_struct is
-
+	signal inputs : std_logic_vector(2 downto 0);
 begin
-  sum  <= x(0);
-  cout <= x(1);
+	inputs <= a & b & cin;
+	with inputs select
+		sum <= 1 when "001" | "010" | "100" | "111", 0 when others;
+	with inputs select
+		cout <= 1 when "011" | "101" | "110" | "111"
+  sum  <= ;
+  cout <= ;
 end beh; 
