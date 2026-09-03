@@ -23,7 +23,7 @@ begin
 	with inputs select
 		sum <= 1 when "001" | "010" | "100" | "111", 0 when others;
 	with inputs select
-		cout <= 1 when "011" | "101" | "110" | "111"
+		cout <= 1 when "011" | "101" | "110" | "111", 0 when others;
   sum  <= ;
   cout <= ;
 end beh; 
