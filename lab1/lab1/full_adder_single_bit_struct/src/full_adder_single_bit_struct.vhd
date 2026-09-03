@@ -21,9 +21,7 @@ architecture beh of full_adder_single_bit_struct is
 begin
 	inputs <= a & b & cin;
 	with inputs select
-		sum <= 1 when "001" | "010" | "100" | "111", 0 when others;
+		sum <= '1' when "001" | "010" | "100" | "111", '0' when others;
 	with inputs select
-		cout <= 1 when "011" | "101" | "110" | "111", 0 when others;
-  sum  <= ;
-  cout <= ;
+		cout <= '1' when "011" | "101" | "110" | "111", '0' when others;
 end beh; 

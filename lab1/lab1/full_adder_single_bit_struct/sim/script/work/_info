@@ -1,0 +1,101 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cem4627/Desktop/camHDL/lab1/lab1/full_adder_single_bit_struct/sim/script
+T_opt
+!s110 1788470977
+V87BKQLP9Th[mg[3Ck9mjI0
+04 31 4 work full_adder_single_bit_struct_tb arch 1
+=1-b07b2521b1fc-6a99e6c0-376-3428
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2019.2;69
+R0
+Efull_adder_single_bit_struct
+Z1 w1788470868
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z5 8../../src/full_adder_single_bit_struct.vhd
+Z6 F../../src/full_adder_single_bit_struct.vhd
+l0
+L9
+VMR_?deM;@kCalUDE>cf591
+!s100 z]O9T4Ia4M2RBgIRl6;_V2
+Z7 OL;C;2019.2;69
+31
+Z8 !s110 1788471168
+!i10b 1
+Z9 !s108 1788471168.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|../../src/full_adder_single_bit_struct.vhd|
+Z11 !s107 ../../src/full_adder_single_bit_struct.vhd|
+!i113 0
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abeh
+R2
+R3
+R4
+DEx4 work 28 full_adder_single_bit_struct 0 22 MR_?deM;@kCalUDE>cf591
+l21
+L19
+Vh33YSgB;4akH2ZEGMA2_G3
+!s100 B5R=JnD18oIhd?jilhMzK1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Efull_adder_single_bit_struct_tb
+Z14 w1788470593
+R3
+R4
+R0
+Z15 8../src/full_adder_single_bit_struct_tb.vhd
+Z16 F../src/full_adder_single_bit_struct_tb.vhd
+l0
+L8
+VGUfl4@GgZ[AT@QH8MnYUj1
+!s100 cJz3_mHcF;d60TC;iFKgH0
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|../src/full_adder_single_bit_struct_tb.vhd|
+Z18 !s107 ../src/full_adder_single_bit_struct_tb.vhd|
+!i113 0
+R12
+R13
+Aarch
+R3
+R4
+Z19 DEx4 work 31 full_adder_single_bit_struct_tb 0 22 GUfl4@GgZ[AT@QH8MnYUj1
+l29
+L11
+Z20 Vm4S_kYX;gd=HKUi]2<2bO0
+Z21 !s100 Q=bNUmlk9S6M9846JNbmh3
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 0
+R12
+R13
