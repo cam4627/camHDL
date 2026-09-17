@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Cameron Marsh
--- BCD Simulation for seven segment display
+-- BCD Driver design for seven segment display
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -28,7 +28,7 @@ architecture beh of seven_seg is
 	constant SEG9 : std_logic_vector := "0011000";
 	constant ERROR : std_logic_vector := "0000110";
 	begin
-	process(bcd, seven_seg_out)
+	process(bcd)
 	begin
 		case bcd is
 			when "0000" => seven_seg_out <= SEG0;
@@ -38,9 +38,9 @@ architecture beh of seven_seg is
 			when "0100" => seven_seg_out <= SEG4;
 			when "0101" => seven_seg_out <= SEG5;
 			when "0110" => seven_seg_out <= SEG6;
-			when "1000" => seven_seg_out <= SEG7;
-			when "1001" => seven_seg_out <= SEG8;
-			when "1010" => seven_seg_out <= SEG9;
+			when "0111" => seven_seg_out <= SEG7;
+			when "1000" => seven_seg_out <= SEG8;
+			when "1001" => seven_seg_out <= SEG9;
 			when others => seven_seg_out <= ERROR;
 		end case;
 	end process;

@@ -1,0 +1,112 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cem4627/camHDL/lab3/lab3/bcd/sim/script
+T_opt
+Z1 !s110 1789681872
+Vzje3kGV@za<BMCnVmPCg=2
+Z2 04 12 4 work seven_seg_tb arch 1
+=1-b07b2521b033-6aac60d0-1aa-8494
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2019.2;69
+T_opt1
+!s110 1789681832
+V4AUHI[ZIkz=aO?9Miii<T2
+R2
+=1-b07b2521b033-6aac60a8-27b-84b0
+R3
+R4
+n@_opt1
+R5
+R0
+Eseven_seg
+Z6 w1789681820
+Z7 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z10 8../../src/seven_seg.vhd
+Z11 F../../src/seven_seg.vhd
+l0
+L9
+VjWFDPQ2obl5O;82b<Qa901
+!s100 IgKRVDZb@RRLECKR;DoM>0
+Z12 OL;C;2019.2;69
+31
+R1
+!i10b 1
+Z13 !s108 1789681871.000000
+Z14 !s90 -reportprogress|300|-93|-work|work|../../src/seven_seg.vhd|
+Z15 !s107 ../../src/seven_seg.vhd|
+!i113 0
+Z16 o-93 -work work
+Z17 tExplicit 1 CvgOpt 0
+Abeh
+R7
+R8
+R9
+DEx4 work 9 seven_seg 0 22 jWFDPQ2obl5O;82b<Qa901
+l30
+L18
+VmID2lh^mb46QQ:hOaf35b2
+!s100 KQlC>l_Gl>LHz0eo6IFP92
+R12
+31
+R1
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Eseven_seg_tb
+Z18 w1789681323
+R7
+R8
+R9
+R0
+Z19 8../src/seven_seg_tb.vhd
+Z20 F../src/seven_seg_tb.vhd
+l0
+L10
+Vd1AGlOHi3HGfW`1PQGiH;1
+!s100 5]>R48j?f]EB7>6`VGi>N1
+R12
+31
+R1
+!i10b 1
+Z21 !s108 1789681872.000000
+Z22 !s90 -reportprogress|300|-93|-work|work|../src/seven_seg_tb.vhd|
+Z23 !s107 ../src/seven_seg_tb.vhd|
+!i113 0
+R16
+R17
+Aarch
+R7
+R8
+R9
+DEx4 work 12 seven_seg_tb 0 22 d1AGlOHi3HGfW`1PQGiH;1
+l30
+L13
+VJ;nPLKJX]=Fz_1WWC929^0
+!s100 9az:0gjL<gQYi]CU8DZY91
+R12
+31
+R1
+!i10b 1
+R21
+R22
+R23
+!i113 0
+R16
+R17
