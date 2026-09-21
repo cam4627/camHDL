@@ -5,10 +5,10 @@
 library ieee;
 use ieee.std_logic_1164.all;      
 
-entity counter_top is
+entity lab3_top is
 
-end counter_top;  
+end lab3_top;  
 
-architecture beh of counter_top  is
+architecture beh of lab3_top  is
 
 end beh;
