@@ -333,7 +333,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9]
 
 #============================================================
-# HEX0
+# HEX0 (rightmost segment display)
 #============================================================
 set_location_assignment PIN_AE26 -to HEX0[0]
 set_location_assignment PIN_AE27 -to HEX0[1]
