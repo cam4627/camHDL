@@ -6,10 +6,9 @@ library ieee;
 use ieee.std_logic_1164.all;      
 
 entity lab3_top is
-
-	clk		: in std_logic;
-
-end lab3_top;  
+	port(
+	clk		: in std_logic );
+end entity lab3_top;  
 
 architecture beh of lab3_top  is
 -- declarative
