@@ -1,5 +1,5 @@
-# Dr. Kaputa
-# Quartus II compile script for DE1-SoC  board
+# Dr. Kaputa, Cameron Marsh
+# Lab 3 Compiler for DE1-SoC board on Quartus II
 
 # 1] name your project here
 set project_name "lab3"
