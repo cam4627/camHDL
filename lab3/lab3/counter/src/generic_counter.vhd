@@ -7,7 +7,7 @@ use ieee.std_logic_1164.all;
 
 entity generic_counter is
   generic (
-    max_count       : integer := 3
+    max_count       : integer := 50000000 -- Number of clock pulses before outputting
   );
   port (
     clk             : in  std_logic; 
