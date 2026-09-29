@@ -7,7 +7,10 @@ use ieee.std_logic_1164.all;
 
 entity lab3_top is
 	port(
-	clk		: in std_logic );
+	clk		: in std_logic;
+	reset	: in std_logic
+	SSD_out	: out std_logic_vector(6 downto 0)
+	);
 end entity lab3_top;  
 
 architecture beh of lab3_top  is
@@ -73,7 +76,10 @@ begin
 	);
 	displayer : seven_seg
 	port map(
-		
+		clk => clk,
+		reset => reset,
+		bcd => sum_sig,
+		seven_seg_out => SSD_out
 	);
 -- sum_register process
 	sum_register: process(clk,enable,sum)

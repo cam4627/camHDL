@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 -- Cameron Marsh
 -- Dr. Kaputa
--- seven segment test bench
+-- testbench for the single-digit BCD up-counter with seven segment display.
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -16,23 +16,18 @@ component lab3_top is
 	port(
 	clk 	: std_logic;
 	reset	: std_logic;
+  SSD_out	: out std_logic_vector(6 downto 0)
 	);
 end component;
 
 begin
 
--- bcd iteration
-sequential_tb : process 
-    begin
-      report "****************** sequential testbench start ****************";
-      wait for 80 ns;   -- let all the initial conditions trickle through
-      for i in 0 to 9 loop
-
-        wait for 40 ns;
-      end loop;
-      report "****************** sequential testbench stop ****************";
-      wait;
-  end process; 
+  uut: lab3_top
+    port map(
+      clk   => clk,
+      reset => reset,
+      SSD_out => SSD_out
+    );
 
 -- clock process
 clock: process
@@ -49,11 +44,4 @@ async_reset: process
     wait;
 end process; 
 
-uut: seven_seg  
-  port map(        
-    clk            => clk,
-    reset          => reset,
-    bcd            => bcd,
-    seven_seg_out  => open
-  );
 end arch;

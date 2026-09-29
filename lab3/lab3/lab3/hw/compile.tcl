@@ -2,7 +2,7 @@
 # Lab 3 Compiler for DE1-SoC board on Quartus II
 
 # 1] name your project here
-set project_name "lab3"
+set project_name "lab3_top"
 
 file delete -force project
 file delete -force output_files
