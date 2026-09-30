@@ -8,7 +8,7 @@ use ieee.std_logic_1164.all;
 entity lab3_top is
 	port(
 	clk		: in std_logic;
-	reset	: in std_logic
+	reset	: in std_logic;
 	SSD_out	: out std_logic_vector(6 downto 0)
 	);
 end entity lab3_top;  
@@ -39,17 +39,17 @@ architecture beh of lab3_top  is
 
 	component generic_counter is
 	  generic (
-		max_count       : integer := 50000
+		max_count       : integer := 20
 	  );
 	  port (
 		clk             : in  std_logic; 
 		reset           : in  std_logic;
-		output          : out std_logic
+		out_flag          : out std_logic
 	  );  
 	end component;  
 
 	signal sum : std_logic_vector(3 downto 0);
-	signal sum_sig : std_logic_vector(3 downto 0);
+	signal sum_sig : std_logic_vector(3 downto 0) := "1111";
 	signal enable : std_logic;
 
 begin
@@ -60,19 +60,19 @@ begin
 	)
 	port map(
 	a => sum_sig,
-	b => "0001"
+	b => "0001",
 	sum => sum,
-	cin => open,
-	cout => open;
+	cin => '0',
+	cout => open
 	);
 	counter : generic_counter
 	generic map(
-		max_count => 50000
+		max_count => 5
 	)
 	port map(
 		clk		=> clk,
-		reset	=> open,
-		output	=> enable;
+		reset	=> reset,
+		out_flag	=> enable
 	);
 	displayer : seven_seg
 	port map(
@@ -84,7 +84,8 @@ begin
 -- sum_register process
 	sum_register: process(clk,enable,sum)
 	begin
-		if( rising_edge(clk) and enable)
+		if rising_edge(clk) and enable='1' then
 			sum_sig <= sum;
 		end if;
+	end process;
 end beh;

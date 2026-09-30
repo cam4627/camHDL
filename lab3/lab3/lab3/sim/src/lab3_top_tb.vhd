@@ -14,11 +14,16 @@ architecture arch of lab3_top_tb is
 
 component lab3_top is
 	port(
-	clk 	: std_logic;
-	reset	: std_logic;
-  SSD_out	: out std_logic_vector(6 downto 0)
+	clk		: in std_logic;
+	reset	: in std_logic;
+	SSD_out	: out std_logic_vector(6 downto 0)
 	);
 end component;
+
+  constant period : time := 20 ns;
+  signal clk : std_logic := '0';
+  signal reset : std_logic := '0';
+  signal SSD_out : std_logic_vector(6 downto 0);
 
 begin
 
