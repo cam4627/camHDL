@@ -49,7 +49,7 @@ architecture beh of lab3_top  is
 	end component;  
 
 	signal sum : std_logic_vector(3 downto 0);
-	signal sum_sig : std_logic_vector(3 downto 0) := "1111";
+	signal sum_sig : std_logic_vector(3 downto 0) := "0000";
 	signal enable : std_logic;
 
 begin
@@ -85,7 +85,11 @@ begin
 	sum_register: process(clk,enable,sum)
 	begin
 		if rising_edge(clk) and enable='1' then
-			sum_sig <= sum;
+			if sum_sig = "1001" then
+				sum_sig <= "0000";
+			else
+				sum_sig <= sum;
+			end if;
 		end if;
 	end process;
 end beh;
