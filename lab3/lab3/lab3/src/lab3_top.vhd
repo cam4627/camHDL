@@ -67,7 +67,7 @@ begin
 	);
 	counter : generic_counter
 	generic map(
-		max_count => 5
+		max_count => 50000000
 	)
 	port map(
 		clk		=> clk,
