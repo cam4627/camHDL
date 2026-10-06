@@ -18,3 +18,7 @@ lab3/lab3/counter/hw/output_files/lab3.flow.rpt
 lab3/lab3/lab3/sim/script/transcript
 lab3/lab3/lab3/sim/script/work/_info
 lab3/lab3/lab3/sim/script/work/_vmake
+*.sci
+*.qws
+*.vstf
+lab3/lab3/lab3/sim/script/wlftab1ede
