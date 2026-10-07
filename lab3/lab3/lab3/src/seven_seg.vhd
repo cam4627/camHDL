@@ -31,7 +31,7 @@ architecture beh of seven_seg is
 
 	begin
 -- Behavioral section
-	process(bcd)
+	process(bcd, reset)
 	begin
 		if reset = '1' then
 			seven_seg_out <= BLANK;

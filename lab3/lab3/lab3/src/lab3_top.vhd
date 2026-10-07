@@ -39,8 +39,8 @@ architecture beh of lab3_top  is
 
 	component generic_counter is
 	  generic (
-		max_count       : integer := 20
-	  );
+		max_count       : integer := 50000000 -- for 50MHz clock, 50 million clocks
+	  );									  -- 1 count per second			
 	  port (
 		clk             : in  std_logic; 
 		reset           : in  std_logic;
@@ -67,7 +67,7 @@ begin
 	);
 	counter : generic_counter
 	generic map(
-		max_count => 5
+		max_count => 50000000
 	)
 	port map(
 		clk		=> clk,

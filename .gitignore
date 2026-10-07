@@ -10,3 +10,11 @@ lab3/lab3/counter/hw/output_files/lab3.flow.rpt
 *.xml
 *.rdb
 *.db_info
+*.bat
+*.wlf
+*.qdb
+*.qtl
+*.qpg
+lab3/lab3/lab3/sim/script/transcript
+lab3/lab3/lab3/sim/script/work/_info
+lab3/lab3/lab3/sim/script/work/_vmake
