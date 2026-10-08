@@ -15,23 +15,28 @@ entity add_sub is
     bits    : integer := 3
   );
   port (
-    a       : in  std_logic_vector(3 downto 0);
-    b       : in  std_logic_vector(3 downto 0);
-	clk		: in std_logic;
-	reset 	: in std_logic;
-	op		: in std_logic;
-    result : out std_logic_vector(3 downto 0);
+    a       : in  std_logic_vector(bits-1 downto 0);
+    b       : in  std_logic_vector(bits-1 downto 0);
+	  clk		: in std_logic;
+	  reset 	: in std_logic;
+	  op		: in std_logic;
+    result : out std_logic_vector(3 downto 0)
   );
 end entity add_sub;
 
 architecture beh of add_sub is
 
-signal sum_temp   : std_logic_vector(3 downto 0);
-signal dfference_temp : std_logic_vector(3 downto 0);
-
 begin
-	op: process(a,b,clk,op,reset)
+	operation: process(clk,reset)
 	begin
-		result <= sum_temp;
+    if reset = '1' then
+        result <= (others => '0');
+    elsif rising_edge(clk) then
+      if op = '0' then
+        result <= std_logic_vector(unsigned(a) + unsigned(b));
+      else
+        result <= std_logic_vector(unsigned(a) - unsigned(b));
+      end if;
+    end if;
 	end process;
 end beh;
