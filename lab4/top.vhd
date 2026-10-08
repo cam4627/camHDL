@@ -140,4 +140,20 @@ architecture beh of top is
             result => result_sig
         );
 
+        -- Takes in a blip and outputs a steady signal. 0 for add, 1 for sub.
+        selector: process(add_sig, sub_sig)
+        begin
+            if add_sig = '1' then
+                op <= '0';
+            elsif sub_sig = '1' then
+                op <= '1';
+            end if;
+        end process;
+
+        -- Pads the 3-bit inputs to 4-bit by prepending a '0'.
+        pad: process(a_sync, b_sync)
+        begin
+            a_4_bit <= '0' & a_sync;
+            b_4_bit <= '0' & b_sync;
+        end process;
 end beh;
