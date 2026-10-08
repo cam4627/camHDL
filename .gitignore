@@ -22,3 +22,11 @@ lab3/lab3/lab3/sim/script/work/_vmake
 *.qws
 *.vstf
 lab3/lab3/lab3/sim/script/wlftab1ede
+*.sig
+*.kpt
+*.hdb
+*.cdb
+*.hb_info
+*.rcfdb
+/lab3/lab3/lab3/hw/output_files
+/lab3/lab3/lab3/hw/project
