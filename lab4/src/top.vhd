@@ -70,7 +70,7 @@ architecture beh of top is
 
     component add_sub
         generic (
-            bits : integer := 3
+            bits : integer := 4
         );
         port (
             a      : in std_logic_vector(3 downto 0);
@@ -98,14 +98,14 @@ architecture beh of top is
             async_in => sub_btn,
             sync_out => sub_sig
         );
-    a_sync : level_sync_3bit
+    a_sync_inst : level_sync_3bit
         port map (
             clk => clk,
             reset => reset,
             async_in => a,
             sync_out => a_sync
         );
-    b_sync : level_sync_3bit
+    b_sync_inst : level_sync_3bit
         port map (
             clk => clk,
             reset => reset,
@@ -140,20 +140,24 @@ architecture beh of top is
             result => result_sig
         );
 
-        -- Takes in a blip and outputs a steady signal. 0 for add, 1 for sub.
-        selector: process(add_sig, sub_sig)
+        -- Capture each button pulse and output a steady signal, op. 0 for add, 1 for sub.
+        selector: process(clk, reset)
         begin
-            if add_sig = '1' then
+            if reset = '1' then
                 op <= '0';
-            elsif sub_sig = '1' then
-                op <= '1';
+            elsif rising_edge(clk) then
+                if add_sig = '1' then
+                    op <= '0';
+                elsif sub_sig = '1' then
+                    op <= '1';
+                end if;
             end if;
         end process;
 
         -- Pads the 3-bit inputs to 4-bit by prepending a '0'.
         pad: process(a_sync, b_sync)
         begin
-            a_4_bit <= '0' & a_sync;
-            b_4_bit <= '0' & b_sync;
+            a_4bit <= '0' & a_sync;
+            b_4bit <= '0' & b_sync;
         end process;
 end beh;

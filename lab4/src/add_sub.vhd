@@ -12,7 +12,7 @@ use ieee.numeric_std.all;
 
 entity add_sub is
   generic (
-    bits    : integer := 3
+    bits    : integer := 4
   );
   port (
     a       : in  std_logic_vector(bits-1 downto 0);

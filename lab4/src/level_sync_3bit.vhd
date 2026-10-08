@@ -5,7 +5,7 @@
 library ieee;
 use ieee.std_logic_1164.all;      
 
-entity synchronizer_3bit is 
+entity level_sync_3bit is 
 generic(
   WIDTH : integer := 3
 );  
@@ -15,9 +15,9 @@ port (
     async_in          : in std_logic_vector(WIDTH-1 downto 0);
     sync_out          : out std_logic_vector(WIDTH-1 downto 0)
   );
-end synchronizer_3bit;
+end level_sync_3bit;
 
-architecture beh of synchronizer_3bit is
+architecture beh of level_sync_3bit is
 -- signal declarations
 signal flop1     : std_logic_vector(WIDTH-1 downto 0);
 signal flop2     : std_logic_vector(WIDTH-1 downto 0);
