@@ -2,7 +2,11 @@
 -- Cameron Marsh
 -- Component declarations for lab5 top level.
 --------------------------------------------------------------------------------
-package components is
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+package components_lab5 is
     component button_sync is
         port (
             clk : in std_logic;
@@ -51,4 +55,4 @@ package components is
         );  
     end component;
 
-end package components;
+end package components_lab5;
