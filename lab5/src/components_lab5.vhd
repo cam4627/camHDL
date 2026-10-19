@@ -31,13 +31,16 @@ package components is
         );
     end component;
     component add_sub is
+        generic (
+            bits : integer := 4
+        );
         port (
             a       : in  std_logic_vector(bits-1 downto 0);
             b       : in  std_logic_vector(bits-1 downto 0);
 	        clk		: in std_logic;
 	        reset 	: in std_logic;
 	        op		: in std_logic;
-            result : out std_logic_vector(3 downto 0)
+            result : out std_logic_vector(bits downto 0)
         );
     end component;
     component seven_seg is
