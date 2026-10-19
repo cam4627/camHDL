@@ -20,7 +20,7 @@ entity add_sub is
 	  clk		: in std_logic;
 	  reset 	: in std_logic;
 	  op		: in std_logic;
-    result : out std_logic_vector(3 downto 0)
+    result : out std_logic_vector(bits downto 0) -- contains cout
   );
 end entity add_sub;
 
@@ -33,9 +33,9 @@ begin
         result <= (others => '0');
     elsif rising_edge(clk) then
       if op = '0' then
-        result <= std_logic_vector(unsigned(a) + unsigned(b));
+        result <= std_logic_vector(unsigned('0' & a) + unsigned('0' & b));
       else
-        result <= std_logic_vector(unsigned(a) - unsigned(b));
+        result <= std_logic_vector(unsigned('0' & a) - unsigned('0' & b));
       end if;
     end if;
 	end process;
