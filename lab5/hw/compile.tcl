@@ -91,7 +91,7 @@ set_location_assignment PIN_AC30 -to hex2[6]
 # set_location_assignment PIN_AA26 -to bcd_5[5]
 # set_location_assignment PIN_AA25 -to bcd_5[6]
 
-set_location_assignment PIN_AA14 -to btn
+set_location_assignment PIN_AA14 -to button
 
 execute_flow -compile
 project_close

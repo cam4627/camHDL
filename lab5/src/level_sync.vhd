@@ -17,7 +17,7 @@ port (
   );
 end level_sync;
 
-architecture beh of level_sync_3bit is
+architecture beh of level_sync is
 -- signal declarations
 signal flop1     : std_logic_vector(WIDTH-1 downto 0);
 signal flop2     : std_logic_vector(WIDTH-1 downto 0);
