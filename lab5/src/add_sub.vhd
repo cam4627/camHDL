@@ -17,9 +17,9 @@ entity add_sub is
   port (
     a       : in  std_logic_vector(bits-1 downto 0);
     b       : in  std_logic_vector(bits-1 downto 0);
-	  clk		: in std_logic;
-	  reset 	: in std_logic;
-	  op		: in std_logic;
+    clk		: in std_logic;
+    reset 	: in std_logic;
+    op		: in std_logic;
     result : out std_logic_vector(bits downto 0) -- contains cout
   );
 end entity add_sub;
@@ -27,8 +27,8 @@ end entity add_sub;
 architecture beh of add_sub is
 
 begin
-	operation: process(clk,reset)
-	begin
+  operation: process(clk,reset)
+  begin
     if reset = '1' then
         result <= (others => '0');
     elsif rising_edge(clk) then
@@ -38,5 +38,5 @@ begin
         result <= std_logic_vector(unsigned('0' & a) - unsigned('0' & b));
       end if;
     end if;
-	end process;
+  end process;
 end beh;
