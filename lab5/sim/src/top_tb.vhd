@@ -25,7 +25,7 @@ architecture tb of top_tb is
       );
     end component;
 
-    constant period : time := 20ns;
+    constant period : time := 20 ns;
     signal clk              : std_logic := '0';
     signal reset            : std_logic := '1';
     signal input_sw         : std_logic_vector(7 downto 0) := (others => '0');
@@ -34,9 +34,6 @@ architecture tb of top_tb is
     signal hex1             : std_logic_vector(6 downto 0);
     signal hex2             : std_logic_vector(6 downto 0);
     signal led              : std_logic_vector(3 downto 0);
-
-type arr is array (0 to 7) of std_logic_vector(7 downto 0);
-constant test_cases : arr := (X"05", X"02", X"02", X"05", X"C8", X"64", X"64", X"C8");
 
 type pairs_array is array (0 to 3, 0 to 1) of
     std_logic_vector(7 downto 0);
@@ -86,7 +83,6 @@ constant test_cases : pairs_array := (
         button <= '1';
         wait for 2 * period;
         button <= '0';
-        i <= i + 1;
         input_sw <= test_cases(i, 1); -- sIn2 input
         wait for 2 * period;
         button <= '1';
@@ -104,3 +100,5 @@ constant test_cases : pairs_array := (
       end loop;
 
     end process;
+
+  end architecture tb;
