@@ -151,6 +151,7 @@ architecture beh of top is
             when sIn2 =>
             b <= num_sig; -- save b (register)
             out_12 <= "0000" & num_sig; -- 8 to 12 bits
+			op <= '0';
             when sAdd =>
             op <= '0'; 
             out_12 <= "000" & result; -- 9 to 12 bits
