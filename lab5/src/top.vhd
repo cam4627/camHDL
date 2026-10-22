@@ -114,27 +114,31 @@ architecture beh of top is
 
     next_state_logic: process(button_sig, current_state)
     begin
-        next_state <= current_state; -- default
-        case current_state is
-            when sIn1 =>
-                if(button_sig = '1') then
-                    next_state <= sIn2;
-                end if;
-            when sIn2 =>
-                if(button_sig = '1') then
-                    next_state <= sAdd;
-                end if;
-            when sAdd =>
-                if(button_sig = '1') then
-                    next_state <= sSub;
-                end if;
-            when sSub =>
-                if(button_sig = '1') then
+        if (reset = '1') then
+            next_state <= sIn1;
+        else
+            next_state <= current_state; -- default
+            case current_state is
+                when sIn1 =>
+                    if(button_sig = '1') then
+                        next_state <= sIn2;
+                    end if;
+                when sIn2 =>
+                    if(button_sig = '1') then
+                        next_state <= sAdd;
+                    end if;
+                when sAdd =>
+                    if(button_sig = '1') then
+                        next_state <= sSub;
+                    end if;
+                when sSub =>
+                    if(button_sig = '1') then
+                        next_state <= sIn1;
+                    end if;
+                when others =>
                     next_state <= sIn1;
-                end if;
-            when others =>
-                next_state <= sIn1;
-            end case;
+                end case;
+        end if;
     end process;
 
     output_logic: process(current_state, num_sig, result)
