@@ -25,10 +25,38 @@ radix define add/sub {
     -default default
 }
 radix define statemachine {
-    "4'b0001" "INPUT1" -color "green",
-    "4'b0010" "INPUT2" -color "green",
+    "4'b0001" "IN1" -color "green",
+    "4'b0010" "IN2" -color "green",
     "4'b0100" "ADD" -color "red",
     "4'b1000" "SUB" -color "red",
     -default default
 }
-
+quietly WaveActivateNextPane {} 0
+add wave -noupdate /top_tb/reset
+add wave -noupdate /top_tb/clk
+add wave -noupdate /top_tb/button
+add wave -noupdate -radix hexadecimal /top_tb/uut/input_sw
+add wave -noupdate -radix statemachine /top_tb/uut/led
+add wave -noupdate -format Literal -radix add/sub /top_tb/uut/add_sub_inst/op
+add wave -noupdate -radix decimal /top_tb/uut/out_12
+add wave -noupdate -radix SSD /top_tb/uut/hex2
+add wave -noupdate -radix SSD /top_tb/uut/hex1
+add wave -noupdate -radix SSD /top_tb/uut/hex0
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {390 ns} 0}
+quietly wave cursor active 1
+configure wave -namecolwidth 150
+configure wave -valuecolwidth 100
+configure wave -justifyvalue left
+configure wave -signalnamewidth 0
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ns
+update
+WaveRestoreZoom {375 ns} {879 ns}

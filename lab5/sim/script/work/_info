@@ -1,0 +1,327 @@
+m255
+K4
+z2
+!s11e vcom 2019.2 2019.04, Apr 17 2019
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/cem4627/camHDL/lab5/sim/script
+T_opt
+Z1 !s110 1792702009
+VCK0G1;@ELR4WZ:X@7ck=00
+04 6 2 work top_tb tb 1
+=1-b07b251b0693-6ada7639-2c8-37ac
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2019.2;69
+R0
+Eadd_sub
+Z2 w1792700400
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+R0
+Z6 8../../src/add_sub.vhd
+Z7 F../../src/add_sub.vhd
+l0
+L13
+VVHQgmLWdTeISJ>:<Zallf3
+!s100 5Hi7=N0mWSXn[8G6:NZCO0
+Z8 OL;C;2019.2;69
+31
+Z9 !s110 1792702215
+!i10b 1
+Z10 !s108 1792702215.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|../../src/add_sub.vhd|
+Z12 !s107 ../../src/add_sub.vhd|
+!i113 0
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Abeh
+R3
+R4
+R5
+DEx4 work 7 add_sub 0 22 VHQgmLWdTeISJ>:<Zallf3
+l29
+L27
+VDm>k7oeFMMWSiXE3QH4`W2
+!s100 WmLekZl]FzhR^]Bbej@jQ1
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Ebutton_sync
+Z15 w1792455248
+R4
+R5
+R0
+Z16 8../../src/button_sync.vhd
+Z17 F../../src/button_sync.vhd
+l0
+L8
+V9`QC78[7Wo<LJ9Rc88b>l0
+!s100 8hH?mEC@2la2JGUO<EE0j0
+R8
+31
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-93|-work|work|../../src/button_sync.vhd|
+Z19 !s107 ../../src/button_sync.vhd|
+!i113 0
+R13
+R14
+Abeh
+R4
+R5
+DEx4 work 11 button_sync 0 22 9`QC78[7Wo<LJ9Rc88b>l0
+l23
+L17
+VGR3RzM=U7BUFGCm_Y8E0d0
+!s100 VJPEJm@=CcnQ`14?B1@DG0
+R8
+31
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 0
+R13
+R14
+Pcomponents_lab5
+R4
+R5
+R15
+R0
+8../../src/components_lab5.vhd
+F../../src/components_lab5.vhd
+l0
+L9
+V?UWUWdndRM5;a8iNTW2be1
+!s100 0:dg3o:X_gPe?LFZjVB@B1
+R8
+31
+!s110 1792702214
+!i10b 1
+Z20 !s108 1792702214.000000
+!s90 -reportprogress|300|-93|-work|work|../../src/components_lab5.vhd|
+!s107 ../../src/components_lab5.vhd|
+!i113 0
+R13
+R14
+Edouble_dabble
+R15
+R3
+R4
+R5
+R0
+Z21 8../../src/double_dabble.vhd
+Z22 F../../src/double_dabble.vhd
+l0
+L9
+VZQ>ZfZlUalRGdI<^UcEen3
+!s100 fYE0ffTbzliU;COi;9eiG3
+R8
+31
+R9
+!i10b 1
+R10
+Z23 !s90 -reportprogress|300|-93|-work|work|../../src/double_dabble.vhd|
+Z24 !s107 ../../src/double_dabble.vhd|
+!i113 0
+R13
+R14
+Abeh
+R3
+R4
+R5
+DEx4 work 13 double_dabble 0 22 ZQ>ZfZlUalRGdI<^UcEen3
+l20
+L18
+VJ7SbHZ8=36<D6=M1^FW?m2
+!s100 UUUSNkM1ZY[_TCgc7macG3
+R8
+31
+R9
+!i10b 1
+R10
+R23
+R24
+!i113 0
+R13
+R14
+Elevel_sync
+Z25 w1792456729
+R4
+R5
+R0
+Z26 8../../src/level_sync.vhd
+Z27 F../../src/level_sync.vhd
+l0
+L8
+VB`n`a3kOV>9FQ>7_d:k[k1
+!s100 M_5PFl0G;7oBAFIUc9@XI2
+R8
+31
+R9
+!i10b 1
+R10
+Z28 !s90 -reportprogress|300|-93|-work|work|../../src/level_sync.vhd|
+Z29 !s107 ../../src/level_sync.vhd|
+!i113 0
+R13
+R14
+Abeh
+R4
+R5
+DEx4 work 10 level_sync 0 22 B`n`a3kOV>9FQ>7_d:k[k1
+l25
+L20
+V96_Y0jCO1T`leNS>R4X2K3
+!s100 :[J3nQcC89^5@2NJF<5Ik1
+R8
+31
+R9
+!i10b 1
+R10
+R28
+R29
+!i113 0
+R13
+R14
+Eseven_seg
+R15
+R3
+R4
+R5
+R0
+Z30 8../../src/seven_seg.vhd
+Z31 F../../src/seven_seg.vhd
+l0
+L9
+VOFmhM2JUBc`?mBfg5=1am0
+!s100 iGh32ScQAK034SjLKl3`A3
+R8
+31
+R9
+!i10b 1
+R20
+Z32 !s90 -reportprogress|300|-93|-work|work|../../src/seven_seg.vhd|
+Z33 !s107 ../../src/seven_seg.vhd|
+!i113 0
+R13
+R14
+Abeh
+R3
+R4
+R5
+DEx4 work 9 seven_seg 0 22 OFmhM2JUBc`?mBfg5=1am0
+l37
+L17
+VNR9l3Ei1VXcbYZ>HndOZ=1
+!s100 ?N:LM]NNHli1RARJm=AY53
+R8
+31
+R9
+!i10b 1
+R20
+R32
+R33
+!i113 0
+R13
+R14
+Etop
+Z34 w1792701787
+Z35 DPx4 work 15 components_lab5 0 22 ?UWUWdndRM5;a8iNTW2be1
+R3
+R4
+R5
+R0
+Z36 8../../src/top.vhd
+Z37 F../../src/top.vhd
+l0
+L11
+VMF5O_1QHzS3W^:I>SE4AG3
+!s100 QkP]l[SJUbLICWfWzC2P;0
+R8
+31
+R9
+!i10b 1
+R10
+Z38 !s90 -reportprogress|300|-93|-work|work|../../src/top.vhd|
+Z39 !s107 ../../src/top.vhd|
+!i113 0
+R13
+R14
+Abeh
+R35
+R3
+R4
+R5
+DEx4 work 3 top 0 22 MF5O_1QHzS3W^:I>SE4AG3
+l46
+L25
+VF_K3?Acao=0=QJnK:Vo=j3
+!s100 XV8HY932lk8BnQQ5b@?5I2
+R8
+31
+R9
+!i10b 1
+R10
+R38
+R39
+!i113 0
+R13
+R14
+Etop_tb
+R2
+R3
+R4
+R5
+R0
+Z40 8../src/top_tb.vhd
+Z41 F../src/top_tb.vhd
+l0
+L9
+VMEmN4M@NVfW?;o5g`hQVi1
+!s100 9mD]`:A1j0OdXUOi:o39`1
+R8
+31
+R9
+!i10b 1
+R10
+Z42 !s90 -reportprogress|300|-93|-work|work|../src/top_tb.vhd|
+Z43 !s107 ../src/top_tb.vhd|
+!i113 0
+R13
+R14
+Atb
+R3
+R4
+R5
+Z44 DEx4 work 6 top_tb 0 22 MEmN4M@NVfW?;o5g`hQVi1
+l48
+L12
+Z45 Vg<VYLV20MPYFLfEZhDXNS2
+Z46 !s100 ccO=0_N7`nAB^Hm6IoAPX3
+R8
+31
+R9
+!i10b 1
+R10
+R42
+R43
+!i113 0
+R13
+R14

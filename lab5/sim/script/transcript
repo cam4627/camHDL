@@ -1,0 +1,951 @@
+# //  ModelSim SE-64 2019.2 Apr 17 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:22:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:22:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:22:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:22:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:22:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:22:16 on Oct 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:16 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:22:16 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:22:16 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:22:16 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" top_tb 
+# Start time: 16:22:16 on Oct 22,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "top(beh)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(tb)#1
+# Loading work.components_lab5
+# Loading work.top(beh)#1
+# Loading work.level_sync(beh)#1
+# Loading work.button_sync(beh)#1
+# Loading work.add_sub(beh)#1
+# Loading work.double_dabble(beh)#1
+# Loading work.seven_seg(beh)#1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+add wave -position end  sim:/top_tb/clk
+add wave -position 0  sim:/top_tb/reset
+add wave -position end  sim:/top_tb/button
+add wave -position end  sim:/top_tb/uut/hex0
+add wave -position end  sim:/top_tb/uut/hex1
+add wave -position end  sim:/top_tb/uut/hex2
+add wave -position 3  sim:/top_tb/uut/button
+# Paste insertion failed: C:/Users/cem4627/camHDL/lab4/sim/script/simulate.bat: Unrecognized dataset prefix: C
+add wave -position 3  sim:/top_tb/uut/led
+add wave -position 2  sim:/top_tb/uut/input_sw
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/cem4627/camHDL/lab5/sim/script/wave.do
+do wave.do
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:26:23 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:26:23 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:26:24 on Oct 22,2026, Elapsed time: 0:04:08
+# Errors: 1, Warnings: 31
+# vsim -voptargs="+acc" top_tb 
+# Start time: 16:26:24 on Oct 22,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(tb)#1
+# Loading work.components_lab5
+# Loading work.top(beh)#1
+# Loading work.level_sync(beh)#1
+# Loading work.button_sync(beh)#1
+# Loading work.add_sub(beh)#1
+# Loading work.double_dabble(beh)#1
+# Loading work.seven_seg(beh)#1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+add wave -position end  sim:/top_tb/uut/b
+
+do wave.do
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:33:03 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:33:03 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:33:04 on Oct 22,2026, Elapsed time: 0:06:40
+# Errors: 38, Warnings: 31
+# vsim -voptargs="+acc" top_tb 
+# Start time: 16:33:04 on Oct 22,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(tb)#1
+# Loading work.components_lab5
+# Loading work.top(beh)#1
+# Loading work.level_sync(beh)#1
+# Loading work.button_sync(beh)#1
+# Loading work.add_sub(beh)#1
+# Loading work.double_dabble(beh)#1
+# Loading work.seven_seg(beh)#1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/cem4627/camHDL/lab5/sim/script/wave.do
+add wave -position 5  sim:/top_tb/uut/add_sub_inst/op
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/cem4627/camHDL/lab5/sim/script/wave.do
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:41:58 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:41:58 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 16:41:59 on Oct 22,2026, Elapsed time: 0:08:55
+# Errors: 5, Warnings: 31
+# vsim -voptargs="+acc" top_tb 
+# Start time: 16:41:59 on Oct 22,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(tb)#1
+# Loading work.components_lab5
+# Loading work.top(beh)#1
+# Loading work.level_sync(beh)#1
+# Loading work.button_sync(beh)#1
+# Loading work.add_sub(beh)#1
+# Loading work.double_dabble(beh)#1
+# Loading work.seven_seg(beh)#1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:46:48 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:46:48 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:46:49 on Oct 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 16:46:49 on Oct 22,2026, Elapsed time: 0:04:50
+# Errors: 0, Warnings: 31
+# vsim -voptargs="+acc" top_tb 
+# Start time: 16:46:49 on Oct 22,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "top(beh)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(tb)#1
+# Loading work.components_lab5
+# Loading work.top(beh)#1
+# Loading work.level_sync(beh)#1
+# Loading work.button_sync(beh)#1
+# Loading work.add_sub(beh)#1
+# Loading work.double_dabble(beh)#1
+# Loading work.seven_seg(beh)#1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /top_tb/uut/double_dabble_inst
+add wave -position 6  sim:/top_tb/uut/out_12
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/cem4627/camHDL/lab5/sim/script/wave.do
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:14 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/components_lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package components_lab5
+# End time: 16:50:14 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:14 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/seven_seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity seven_seg
+# -- Compiling architecture beh of seven_seg
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/level_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity level_sync
+# -- Compiling architecture beh of level_sync
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/button_sync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity button_sync
+# -- Compiling architecture beh of button_sync
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/double_dabble.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity double_dabble
+# -- Compiling architecture beh of double_dabble
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/add_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity add_sub
+# -- Compiling architecture beh of add_sub
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../../src/top.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package components_lab5
+# -- Compiling entity top
+# -- Compiling architecture beh of top
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vcom 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:50:15 on Oct 22,2026
+# vcom -reportprogress 300 -93 -work work ../src/top_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity top_tb
+# -- Compiling architecture tb of top_tb
+# End time: 16:50:15 on Oct 22,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
