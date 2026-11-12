@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
--- Dr. Kaputa
--- components package
+-- Cameron Marsh
+-- components package for lab6 (8-bit calculator with memory)
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -26,14 +26,14 @@ package components is
             async_in          : in std_logic_vector(WIDTH-1 downto 0);
             sync_out          : out std_logic_vector(WIDTH-1 downto 0)
         );
+    end component;
 
   component double_dabble is
     port (
-      binary_in       : in std_logic_vector(11 downto 0);
-      ones            : out std_logic_vector(3 downto 0);
-      tens            : out std_logic_vector(3 downto 0);
-      hundreds        : out std_logic_vector(3 downto 0);
-      thousands       : out std_logic_vector(3 downto 0)
+      result_padded           : in  std_logic_vector(11 downto 0); 
+      ones                    : out std_logic_vector(3 downto 0);
+      tens                    : out std_logic_vector(3 downto 0);
+      hundreds                : out std_logic_vector(3 downto 0)
     );  
   end component;  
 
