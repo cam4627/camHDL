@@ -12,6 +12,7 @@ use IEEE.NUMERIC_STD.ALL;
             data_width : integer := 8);
     port (
       clk               : in std_logic;
+      reset             : in std_logic;
       we                : in std_logic;
       addr              : in std_logic_vector(addr_width - 1 downto 0);
       din               : in std_logic_vector(data_width - 1 downto 0);
@@ -25,9 +26,11 @@ architecture Behavioral of memory is
 
 begin
   
-  process(clk)
+  process(clk, reset)
   begin
-    if (clk'event and clk = '1') then
+    if reset = '1' then
+      RAM <= (others => (others => '0'));
+    elsif (clk'event and clk = '1') then
       if we = '1' then
         RAM(to_integer(unsigned(addr))) <= din;
         end if;
