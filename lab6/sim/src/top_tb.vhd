@@ -72,6 +72,14 @@ begin
     wait for PERIOD / 2;
 end process;
 
+-- reset process
+async_reset: process
+    begin
+        wait for period;
+        reset <= '0';
+        wait;
+    end process;
+
 -- Reads the input file and drives through the INPUT, EXECUTE and WRITEBACK
 -- states (WRITEBACK is automatically one clock . 
 -- FILE FORMAT: "input.txt" columns RESET OP SWITCH
@@ -85,14 +93,19 @@ read_file: process is
   variable read_ok          : boolean;
 
   begin 
-  file_open(input_file,"inputs.txt",READ_MODE);
+  file_open(input_file,"../src/inputs.txt",READ_MODE);
   readline(input_file,input_line);    -- strip off the header line
+  wait for period;                    -- wait for initial reset to complete
 while not endfile(input_file) loop
     readline(input_file, input_line);
     -- read fields and assign them to signals
     read(input_line, reset_var, read_ok);
     if read_ok then
-            reset <= to_stdlogic(reset_var);
+	if reset_var = '1' then
+            reset <= '1';
+	else
+	   reset <= '0';
+	end if;
     else
         report "Invalid read of RESET in input file"
             severity error;
