@@ -79,6 +79,7 @@ architecture behavioral of top is
         )
         port map(
             clk => clk,
+            reset => reset,
             we => we,
             addr => address,
             din => alu_out,
@@ -175,8 +176,11 @@ begin
                 result_padded <= "0000" & alu_out;
                 op_sig <= op;
         end case;
+    end if;
 end process;
 
+-- Increments address on each clock edge during the EXECUTE state.
+-- This works because EXECUTE is always one clock cycle long.
 increment_addr: process(clk)
 begin
     if (clk'event and clk = '1') then

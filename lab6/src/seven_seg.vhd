@@ -35,11 +35,8 @@ architecture beh of seven_seg is
 
   begin
 -- Behavioral section
-  process(bcd, reset)
+  process(bcd)
   begin
-      if reset = '1' then
-          ssd_out <= BLANK;
-      else
         case bcd is
           when "0000" => ssd_out <= SEG0;
           when "0001" => ssd_out <= SEG1;
@@ -59,6 +56,5 @@ architecture beh of seven_seg is
           when "1111" => ssd_out <= SEGF;
           when others => ssd_out <= BLANK;
         end case;
-      end if;
     end process;
 end beh;

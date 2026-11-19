@@ -49,9 +49,10 @@ package components is
 
   component memory is 
     generic (addr_width : integer := 2;
-            data_width : integer := 4);
+            data_width : integer := 8);
     port (
       clk               : in std_logic;
+      reset             : in std_logic;
       we                : in std_logic;
       addr              : in std_logic_vector(addr_width - 1 downto 0);
       din               : in std_logic_vector(data_width - 1 downto 0);
