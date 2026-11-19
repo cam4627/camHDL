@@ -26,11 +26,43 @@ radix define opcode {
     "2'b11" "DIV" -color "cyan",
     -default default
 }
-
 radix define states {
     "3'b001" "INPUT" -color "green",
     "3'b010" "EXECUTE" -color "green",
     "3'b100" "WRITEBACK" -color "green",
     -default default
 }
-
+quietly WaveActivateNextPane {} 0
+add wave -noupdate /top_tb/uut/clk
+add wave -noupdate /top_tb/uut/reset
+add wave -noupdate -radix decimal /top_tb/uut/input_sw
+add wave -noupdate -expand -group memory -radix decimal /top_tb/uut/mem_out
+add wave -noupdate -expand -group memory -radix unsigned /top_tb/uut/address
+add wave -noupdate -radix opcode /top_tb/uut/op_sw
+add wave -noupdate /top_tb/uut/execute_btn
+add wave -noupdate -radix states /top_tb/uut/led
+add wave -noupdate -radix states /top_tb/uut/next_state
+add wave -noupdate -expand -group alu -radix decimal /top_tb/uut/alu_inst/a
+add wave -noupdate -expand -group alu -radix decimal /top_tb/uut/alu_inst/b
+add wave -noupdate -expand -group alu -radix decimal /top_tb/uut/alu_inst/result
+add wave -noupdate -expand -group display -radix seven_seg /top_tb/uut/hex2
+add wave -noupdate -expand -group display -radix seven_seg /top_tb/uut/hex1
+add wave -noupdate -expand -group display -radix seven_seg /top_tb/uut/hex0
+TreeUpdate [SetDefaultTree]
+WaveRestoreCursors {{Cursor 1} {47783 ps} 0}
+quietly wave cursor active 1
+configure wave -namecolwidth 212
+configure wave -valuecolwidth 100
+configure wave -justifyvalue left
+configure wave -signalnamewidth 0
+configure wave -snapdistance 10
+configure wave -datasetprefix 0
+configure wave -rowmargin 4
+configure wave -childrowmargin 2
+configure wave -gridoffset 0
+configure wave -gridperiod 1
+configure wave -griddelta 40
+configure wave -timeline 0
+configure wave -timelineunits ps
+update
+WaveRestoreZoom {0 ps} {378192 ps}
