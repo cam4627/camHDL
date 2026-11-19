@@ -36,7 +36,7 @@ architecture behavioral of top is
     signal alu_out : std_logic_vector(7 downto 0);
     signal result_padded : std_logic_vector(11 downto 0);
     signal we : std_logic;
-    signal address : std_logic_vector(1 downto 0);
+    signal address : std_logic_vector(1 downto 0) := (others => '0');
     signal hundreds, tens, ones : std_logic_vector(3 downto 0);
     
     constant sINPUT : std_logic_vector(2 downto 0) := "001";
@@ -139,12 +139,16 @@ begin
             when sINPUT =>
                 if(execute = '1') then
                     next_state <= sEXECUTE;
+                else
+                    next_state <= sINPUT;
                 end if;
             when sEXECUTE =>
                 next_state <= sWRITEBACK;
             when sWRITEBACK =>
                 if(execute = '1') then
                     next_state <= sINPUT;
+                else
+                    next_state <= sWRITEBACK;
                 end if;
             when others =>
                 next_state <= sINPUT;
@@ -154,23 +158,19 @@ end process;
 
 output_logic: process(a, op, alu_out, reset, current_state)
 begin
-    if reset = '1' then
-        address <= (others => '0');
-    else
+    if reset /= '1' then
         case current_state is
             when sINPUT =>
-                result_padded <= "0000" & a;
+                result_padded <= "0000" & a; -- Displays the input during this state
                 op_sig <= op;
                 we <= '0';
-            when sEXECUTE =>
+            when sEXECUTE =>                -- Computes the result and increments the address in this state
                 we <= '0';
                 op_sig <= op;
                 result_padded <= "0000" & alu_out;
-                address <= std_logic_vector(unsigned(address) + 1);
-            when sWRITEBACK =>
+            when sWRITEBACK =>              -- enable write. Keeps displaying latched result from EXECUTE state.
                 we <= '1';
-                result_padded <= "0000" & alu_out;
-                --- result_padded remains latched to the last ALU output
+            -- Turns on write in this state and latches the result on the displays
             when others =>
                 we <= '0';
                 result_padded <= "0000" & alu_out;
@@ -179,11 +179,13 @@ begin
     end if;
 end process;
 
--- Increments address on each clock edge during the EXECUTE state.
--- This works because EXECUTE is always one clock cycle long.
-increment_addr: process(clk)
+-- Contains reset functionality and increment functionality for address signal.
+-- Increments once in EXECUTE (execute state is only 1 clock long)
+increment_addr: process(clk, reset)
 begin
-    if (clk'event and clk = '1') then
+    if reset = '1' then
+        address <= (others => '0');
+    elsif rising_edge(clk) then
         if(current_state = sEXECUTE) then
             address <= std_logic_vector(unsigned(address) + 1);
         end if;
