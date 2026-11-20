@@ -31,7 +31,7 @@ architecture behavioral of top is
     signal op_sig : std_logic_vector(1 downto 0);
     signal execute : std_logic;
     signal current_state, next_state : std_logic_vector(2 downto 0) := "001";
-    signal din : std_logic_vector(7 downto 0);
+    signal mem_in : std_logic_vector(7 downto 0);
     signal mem_out : std_logic_vector(7 downto 0);
     signal alu_out : std_logic_vector(7 downto 0);
     signal result_padded : std_logic_vector(11 downto 0);
@@ -82,7 +82,7 @@ architecture behavioral of top is
             reset => reset,
             we => we,
             addr => address,
-            din => alu_out,
+            din => mem_in,
             dout => mem_out
         );
     alu_inst : alu
@@ -167,6 +167,7 @@ begin
             when sEXECUTE =>                -- Computes the result and increments the address in this state
                 we <= '0';
                 op_sig <= op;
+                mem_in <= alu_out;
                 result_padded <= "0000" & alu_out;
             when sWRITEBACK =>              -- enable write. Keeps displaying latched result from EXECUTE state.
                 we <= '1';
