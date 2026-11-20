@@ -31,17 +31,11 @@ architecture beh of top_tb is
         );
     end component;
 
-    -- File reading and writing
-    file inputs : text;
-    file outputs : text;
-    signal input_vector : std_logic_vector(9 downto 0) := (others => '0');
     constant PERIOD           : time := 20 ns;
-
-
     -- UUT signals
     signal clk : std_logic := '0';
     signal reset : std_logic := '1';
-    signal execute_btn : std_logic;
+    signal execute_btn : std_logic := '0';
     signal input_sw : std_logic_vector(7 downto 0);
     signal op_sw : std_logic_vector(1 downto 0);
     signal hex2 : std_logic_vector(6 downto 0);
@@ -49,7 +43,26 @@ architecture beh of top_tb is
     signal hex0 : std_logic_vector(6 downto 0);
     signal led : std_logic_vector(3 downto 0);
 
-    begin 
+    function seven_seg_to_bcd(segments : std_logic_vector(6 downto 0))
+        return std_logic_vector is
+    begin
+        case segments is
+            when "1000000" => return "0000";
+            when "1111001" => return "0001";
+            when "0100100" => return "0010";
+            when "0110000" => return "0011";
+            when "0011001" => return "0100";
+            when "0010010" => return "0101";
+            when "0000010" => return "0110";
+            when "1111000" => return "0111";
+            when "0000000" => return "1000";
+            when "0011000" => return "1001";
+            when others =>
+                return "0000";
+        end case;
+    end function;
+
+begin
 
     uut: top
     port map(
@@ -86,16 +99,21 @@ async_reset: process
 -- Opcodes: "00" = ADD, "01" = SUB, "10" = MULT, "11" = DIV
 read_file: process is
   variable input_line       : line;
+  variable output_line      : line;
   variable op_var           : bit_vector(1 downto 0);
   variable reset_var        : bit;
   variable switch_var       : bit_vector(7 downto 0); 
   file input_file           : text;
+  file output_file          : text;
   variable read_ok          : boolean;
 
   begin 
   file_open(input_file,"../src/inputs.txt",READ_MODE);
+  file_open(output_file,"../src/outputs.txt",WRITE_MODE);
   readline(input_file,input_line);    -- strip off the header line
-  wait for period;                    -- wait for initial reset to complete
+  write(output_line, string'("hundreds tens ones"));
+  writeline(output_file, output_line);
+  wait for PERIOD;                    -- wait for initial reset to complete
 while not endfile(input_file) loop
     readline(input_file, input_line);
     -- read fields and assign them to signals
@@ -126,15 +144,23 @@ while not endfile(input_file) loop
     end if;
     wait for PERIOD;
     execute_btn <= '1'; -- go to EXECUTE state
-    wait for 2*PERIOD;
+    wait for 2* PERIOD;
     execute_btn <= '0';
-    wait for PERIOD;  
+    wait for 2* PERIOD;  
+    -- Write results to output
+    write(output_line, to_integer(unsigned(seven_seg_to_bcd(hex2))));
+    write(output_line, string'(" "));
+    write(output_line, to_integer(unsigned(seven_seg_to_bcd(hex1))));
+    write(output_line, string'(" "));
+    write(output_line, to_integer(unsigned(seven_seg_to_bcd(hex0))));
+    writeline(output_file, output_line);
     execute_btn <= '1'; -- return to INPUT state
     wait for PERIOD;
     execute_btn <= '0';
-
+    wait for 3 * PERIOD; -- wait for switch back to INPUT 
     end loop;
     file_close(input_file);
+    file_close(output_file);
     wait;
 end process read_file;
 end architecture beh;
