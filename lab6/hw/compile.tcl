@@ -27,16 +27,19 @@ set_global_assignment -name VHDL_FILE ../../src/components.vhd
 set_global_assignment -name VHDL_FILE ../../src/top.vhd
 
 set_location_assignment PIN_AF14 -to clk
-set_location_assignment PIN_AA14 -to execute_btn
+set_location_assignment PIN_AA15 -to execute_btn
 # set_location_assignment PIN_AA15 -to mr
 # set_location_assignment PIN_W15  -to ms
-set_location_assignment PIN_Y16  -to reset
+
+# Y16: KEY3 (active low reset). AA15: KEY2 (execute button)
+set_location_assignment PIN_Y16  -to reset_n 
 
 set_location_assignment PIN_V16  -to led[0]
 set_location_assignment PIN_W16  -to led[1]
 set_location_assignment PIN_V17  -to led[2]
 set_location_assignment PIN_V18  -to led[3]
 
+# input_sw on SW0 to SW7
 set_location_assignment PIN_AB12 -to input_sw[0]
 set_location_assignment PIN_AC12 -to input_sw[1]
 set_location_assignment PIN_AF9  -to input_sw[2]
@@ -46,6 +49,7 @@ set_location_assignment PIN_AD12 -to input_sw[5]
 set_location_assignment PIN_AE11 -to input_sw[6]
 set_location_assignment PIN_AC9  -to input_sw[7]
 
+# Op on SW8 to SW9
 set_location_assignment PIN_AD10 -to op_sw[0]
 set_location_assignment PIN_AE12 -to op_sw[1]
 
