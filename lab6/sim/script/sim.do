@@ -11,4 +11,4 @@ vcom -93 -work work ../src/top_tb.vhd
 
 vsim -voptargs=+acc top_tb
 do wave.do
-run 3000 ns
+run 2000 ns

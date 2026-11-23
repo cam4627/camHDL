@@ -12,7 +12,7 @@ use work.components.all;
 entity top is
     port (
         clk            : in std_logic;
-        reset         : in std_logic;
+        reset_n         : in std_logic;
         input_sw     : in std_logic_vector(7 downto 0);
         op_sw       : in std_logic_vector(1 downto 0);
         execute_btn : in std_logic;
@@ -31,19 +31,23 @@ architecture behavioral of top is
     signal op_sig : std_logic_vector(1 downto 0);
     signal execute : std_logic;
     signal current_state, next_state : std_logic_vector(2 downto 0) := "001";
-    signal din : std_logic_vector(7 downto 0);
+    signal mem_in : std_logic_vector(7 downto 0);
     signal mem_out : std_logic_vector(7 downto 0);
     signal alu_out : std_logic_vector(7 downto 0);
     signal result_padded : std_logic_vector(11 downto 0);
     signal we : std_logic;
-    signal address : std_logic_vector(1 downto 0);
+    signal address : std_logic_vector(1 downto 0) := (others => '0');
     signal hundreds, tens, ones : std_logic_vector(3 downto 0);
+
+    signal reset : std_logic; -- active high reset
     
     constant sINPUT : std_logic_vector(2 downto 0) := "001";
     constant sEXECUTE : std_logic_vector(2 downto 0) := "010";
     constant sWRITEBACK : std_logic_vector(2 downto 0) := "100";
 
     begin
+        reset <= not reset_n; -- reset flip so we can use it as active-high
+
     -- Instantiations
     button_sync_inst : button_sync
         port map(
@@ -82,7 +86,7 @@ architecture behavioral of top is
             reset => reset,
             we => we,
             addr => address,
-            din => alu_out,
+            din => mem_in,
             dout => mem_out
         );
     alu_inst : alu
@@ -139,12 +143,16 @@ begin
             when sINPUT =>
                 if(execute = '1') then
                     next_state <= sEXECUTE;
+                else
+                    next_state <= sINPUT;
                 end if;
             when sEXECUTE =>
                 next_state <= sWRITEBACK;
             when sWRITEBACK =>
                 if(execute = '1') then
                     next_state <= sINPUT;
+                else
+                    next_state <= sWRITEBACK;
                 end if;
             when others =>
                 next_state <= sINPUT;
@@ -152,39 +160,64 @@ begin
     end if;
 end process;
 
-output_logic: process(a, op, alu_out, reset, current_state)
+output_logic: process(op, alu_out, reset, current_state)
 begin
     if reset = '1' then
-        address <= (others => '0');
+        op_sig <= (others => '0');
     else
         case current_state is
             when sINPUT =>
-                result_padded <= "0000" & a;
                 op_sig <= op;
-                we <= '0';
-            when sEXECUTE =>
-                we <= '0';
+            when sEXECUTE =>                -- Computes the result and increments the address in this state
                 op_sig <= op;
-                result_padded <= "0000" & alu_out;
-                address <= std_logic_vector(unsigned(address) + 1);
             when sWRITEBACK =>
-                we <= '1';
-                result_padded <= "0000" & alu_out;
-                --- result_padded remains latched to the last ALU output
+                op_sig <= op;
             when others =>
-                we <= '0';
-                result_padded <= "0000" & alu_out;
                 op_sig <= op;
         end case;
     end if;
 end process;
 
--- Increments address on each clock edge during the EXECUTE state.
--- This works because EXECUTE is always one clock cycle long.
-increment_addr: process(clk)
+display_register: process(clk, reset)
 begin
-    if (clk'event and clk = '1') then
-        if(current_state = sEXECUTE) then
+    if reset = '1' then
+        result_padded <= (others => '0');
+    elsif rising_edge(clk) then
+        case current_state is
+            when sINPUT =>
+                result_padded <= "0000" & a;
+            when sEXECUTE =>
+                result_padded <= "0000" & alu_out;
+            when sWRITEBACK =>
+                null;
+            when others =>
+                result_padded <= (others => '0');
+        end case;
+    end if;
+end process;
+
+write_enable_logic: process(clk, reset)
+begin
+    if reset = '1' then
+        mem_in <= (others => '0');
+        we <= '0';
+    elsif rising_edge(clk) then
+        we <= '0';
+        if current_state = sEXECUTE then
+            mem_in <= alu_out;
+            we <= '1';
+        end if;
+    end if;
+end process;
+
+-- Contains reset functionality and increment functionality for address signal.
+-- Increments once in EXECUTE (execute state is only 1 clock long)
+increment_addr: process(clk, reset)
+begin
+    if reset = '1' then
+        address <= (others => '0');
+    elsif rising_edge(clk) then
+        if current_state = sEXECUTE then
             address <= std_logic_vector(unsigned(address) + 1);
         end if;
     end if;
