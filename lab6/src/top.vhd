@@ -12,7 +12,7 @@ use work.components.all;
 entity top is
     port (
         clk            : in std_logic;
-        reset         : in std_logic;
+        reset_n         : in std_logic;
         input_sw     : in std_logic_vector(7 downto 0);
         op_sw       : in std_logic_vector(1 downto 0);
         execute_btn : in std_logic;
@@ -38,12 +38,16 @@ architecture behavioral of top is
     signal we : std_logic;
     signal address : std_logic_vector(1 downto 0) := (others => '0');
     signal hundreds, tens, ones : std_logic_vector(3 downto 0);
+
+    signal reset : std_logic; -- active high reset
     
     constant sINPUT : std_logic_vector(2 downto 0) := "001";
     constant sEXECUTE : std_logic_vector(2 downto 0) := "010";
     constant sWRITEBACK : std_logic_vector(2 downto 0) := "100";
 
     begin
+        reset <= not reset_n; -- reset flip so we can use it as active-high
+
     -- Instantiations
     button_sync_inst : button_sync
         port map(
@@ -156,27 +160,53 @@ begin
     end if;
 end process;
 
-output_logic: process(a, op, alu_out, reset, current_state)
+output_logic: process(op, alu_out, reset, current_state)
 begin
-    if reset /= '1' then
+    if reset = '1' then
+        op_sig <= (others => '0');
+    else
         case current_state is
             when sINPUT =>
-                result_padded <= "0000" & a; -- Displays the input during this state
                 op_sig <= op;
-                we <= '0';
             when sEXECUTE =>                -- Computes the result and increments the address in this state
-                we <= '0';
                 op_sig <= op;
-                mem_in <= alu_out;
-                result_padded <= "0000" & alu_out;
-            when sWRITEBACK =>              -- enable write. Keeps displaying latched result from EXECUTE state.
-                we <= '1';
-            -- Turns on write in this state and latches the result on the displays
+            when sWRITEBACK =>
+                op_sig <= op;
             when others =>
-                we <= '0';
-                result_padded <= "0000" & alu_out;
                 op_sig <= op;
         end case;
+    end if;
+end process;
+
+display_register: process(clk, reset)
+begin
+    if reset = '1' then
+        result_padded <= (others => '0');
+    elsif rising_edge(clk) then
+        case current_state is
+            when sINPUT =>
+                result_padded <= "0000" & a;
+            when sEXECUTE =>
+                result_padded <= "0000" & alu_out;
+            when sWRITEBACK =>
+                null;
+            when others =>
+                result_padded <= (others => '0');
+        end case;
+    end if;
+end process;
+
+write_enable_logic: process(clk, reset)
+begin
+    if reset = '1' then
+        mem_in <= (others => '0');
+        we <= '0';
+    elsif rising_edge(clk) then
+        we <= '0';
+        if current_state = sEXECUTE then
+            mem_in <= alu_out;
+            we <= '1';
+        end if;
     end if;
 end process;
 
@@ -187,7 +217,7 @@ begin
     if reset = '1' then
         address <= (others => '0');
     elsif rising_edge(clk) then
-        if(current_state = sEXECUTE) then
+        if current_state = sEXECUTE then
             address <= std_logic_vector(unsigned(address) + 1);
         end if;
     end if;

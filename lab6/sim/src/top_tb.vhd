@@ -19,7 +19,7 @@ architecture beh of top_tb is
     component top
         port (
             clk            : in std_logic;
-            reset         : in std_logic;
+            reset_n         : in std_logic;
             input_sw     : in std_logic_vector(7 downto 0);
             op_sw       : in std_logic_vector(1 downto 0);
             execute_btn : in std_logic;
@@ -34,7 +34,7 @@ architecture beh of top_tb is
     constant PERIOD           : time := 20 ns;
     -- UUT signals
     signal clk : std_logic := '0';
-    signal reset : std_logic := '1';
+    signal reset_n : std_logic := '0';
     signal execute_btn : std_logic := '0';
     signal input_sw : std_logic_vector(7 downto 0);
     signal op_sw : std_logic_vector(1 downto 0);
@@ -43,6 +43,7 @@ architecture beh of top_tb is
     signal hex0 : std_logic_vector(6 downto 0);
     signal led : std_logic_vector(3 downto 0);
 
+    -- Helper function for writing output to the file
     function seven_seg_to_bcd(segments : std_logic_vector(6 downto 0))
         return std_logic_vector is
     begin
@@ -67,7 +68,7 @@ begin
     uut: top
     port map(
         clk => clk,
-        reset => reset,
+        reset_n => reset_n,
         input_sw => input_sw,
         op_sw => op_sw,
         execute_btn => execute_btn,
@@ -85,23 +86,23 @@ begin
     wait for PERIOD / 2;
 end process;
 
--- reset process
-async_reset: process
+-- reset_n process
+async_reset_n: process
     begin
         wait for period;
-        reset <= '0';
+        reset_n <= '1';
         wait;
     end process;
 
 -- Reads the input file and drives through the INPUT, EXECUTE and WRITEBACK
 -- states (WRITEBACK is automatically one clock . 
--- FILE FORMAT: "input.txt" columns RESET OP SWITCH
+-- FILE FORMAT: "input.txt" columns reset_n OP SWITCH
 -- Opcodes: "00" = ADD, "01" = SUB, "10" = MULT, "11" = DIV
 read_file: process is
   variable input_line       : line;
   variable output_line      : line;
   variable op_var           : bit_vector(1 downto 0);
-  variable reset_var        : bit;
+  variable reset_n_var        : bit;
   variable switch_var       : bit_vector(7 downto 0); 
   file input_file           : text;
   file output_file          : text;
@@ -113,19 +114,19 @@ read_file: process is
   readline(input_file,input_line);    -- strip off the header line
   write(output_line, string'("hundreds tens ones"));
   writeline(output_file, output_line);
-  wait for PERIOD;                    -- wait for initial reset to complete
+  wait for PERIOD;                    -- wait for initial reset_n to complete
 while not endfile(input_file) loop
     readline(input_file, input_line);
     -- read fields and assign them to signals
-    read(input_line, reset_var, read_ok);
+    read(input_line, reset_n_var, read_ok);
     if read_ok then
-	if reset_var = '1' then
-            reset <= '1';
+	if reset_n_var = '1' then
+            reset_n <= '1';
 	else
-	   reset <= '0';
+	   reset_n <= '0';
 	end if;
     else
-        report "Invalid read of RESET in input file"
+        report "Invalid read of reset_n in input file"
             severity error;
     end if;
     read(input_line, op_var, read_ok);
